@@ -1,31 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 export default class polnexus extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+
+        <Image
+          style={{
+            width: 300,
+            height: 200,
+          }}
+          resizeMode={"contain"}
+          source={{uri:'https://res.cloudinary.com/drrwovgv6/image/upload/v1483895904/icon_r5rwee.png'}}
+        />
+
       </View>
     );
   }
