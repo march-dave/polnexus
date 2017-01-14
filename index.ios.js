@@ -4,43 +4,54 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  AlertIOS,
+  TouchableHighlight
 } from 'react-native';
 
 export default class polnexus extends Component {
 
   constructor(props) {
     super(props)
+
+    this.state = {
+      sentence: ['Hello']
+    }
   }
 
-  onImageClick(e) {
-    console.log('e');
+  ImageClick(e) {
+    console.log('e', e);
+
+    AlertIOS.alert('onPressssssss', '111');
   }
 
   render() {
     return (
-      // <View style={styles.container}>
-      //   <Image onClick={this.onImageClick.bind(this)}
-      //     style={styles.goImages}
-      //     resizeMode={"contain"}
-      //     source={{uri:'https://res.cloudinary.com/drrwovgv6/image/upload/v1483895904/icon_r5rwee.png'}}
-      //   />
-      // </View>
-
+    
       <View style={{
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}>
         <View>
-          <Image
-              style={styles.goImages}
-              resizeMode={"contain"}
-              source={{uri:'https://res.cloudinary.com/drrwovgv6/image/upload/v1483895904/icon_r5rwee.png'}}
-            />
+
+          <TouchableHighlight
+            onPress={this.ImageClick.bind(this)}
+            activeOpacity={75 / 100}
+            underlayColor={"rgb(210,210,210)"}>
+
+            <Image
+                style={styles.goImages}
+                resizeMode={"contain"}
+                source={{uri:'https://res.cloudinary.com/drrwovgv6/image/upload/v1483895904/icon_r5rwee.png'}}
+              />
+          </TouchableHighlight>
         </View>
+
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+
+        <Text style={ {height: 50, backgroundColor: 'steelblue'} }>{this.state.sentence}</Text>
+
       </View>
     );
   }
