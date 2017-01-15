@@ -15,40 +15,28 @@ export default class polnexus extends Component {
     super(props)
 
     this.state = {
-      sentence: ['Hello']
+      // sentence: ['Hello']
+      like: 0,
+      dislike: 0
     }
   }
 
   ImageClick(e) {
     // AlertIOS.alert('onPressssssss', '111');
 
-    // var settings = {
-    //   "async": true,
-    //   "crossDomain": true,
-    //   "url": "http://lpolnexusserver.herokuapp.com/api/clients/587b64ba2d0aaaedc92f6614",
-    //   "method": "PUT",
-    //   "headers": {
-    //     "content-type": "application/x-www-form-urlencoded",
-    //     "cache-control": "no-cache",
-    //     "postman-token": "b6c398da-2a79-298a-fa46-3dc7fa64d021"
-    //   },
-    //   "data": {
-    //     "like": "gg"
-    //   }
-    // }
-    //
-    // $.ajax(settings).done(function (response) {
-    //   console.log(response);
-    // });
+    this.setState({
+        like: (parseInt(this.state.like) + 1)
+    })
 
     fetch('https://polnexusserver.herokuapp.com/api/clients/587b66786c867e001150cd10', {
+    // fetch('http://localhost:3000/api/clients/587b64ba2d0aaaedc92f6614', {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        like: 10,
+        like: this.state.like,
         dislike: 2,
       })
     })
@@ -88,7 +76,7 @@ export default class polnexus extends Component {
         </View>
 
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-        <Text style={ {height: 50, backgroundColor: 'steelblue'} }>{this.state.sentence}</Text>
+        <Text style={ {height: 50, backgroundColor: 'steelblue'} }>{this.state.like}</Text>
 
       </View>
     );
