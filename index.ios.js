@@ -40,16 +40,6 @@ export default class polnexus extends Component {
         dislike: 2,
       })
     })
-
-    // return fetch('https://polnexusserver.herokuapp.com/api/clients')
-    //       .then((response) => response.json())
-    //       .then((responseJson) => {
-    //         console.log(responseJson);
-    //         return responseJson.movies;
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //       });
   }
 
   render() {
