@@ -10,6 +10,8 @@ import {
   TouchOpacity
 } from 'react-native';
 
+import Landing from './app/Landing';
+
 export default class polnexus extends Component {
 
   constructor(props) {
@@ -65,6 +67,8 @@ export default class polnexus extends Component {
               />
           </TouchableHighlight>
         </View>
+
+        <Landing />
 
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <Text style={ {height: 50, backgroundColor: 'steelblue'} }>{this.state.like}</Text>
