@@ -6,7 +6,8 @@ import {
   View,
   Image,
   AlertIOS,
-  TouchableHighlight
+  TouchableHighlight,
+  TouchOpacity
 } from 'react-native';
 
 export default class polnexus extends Component {
