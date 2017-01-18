@@ -8,24 +8,22 @@ import {
 import NavigationBar from 'react-native-navbar';
 
 export default class Landing extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
-  render() {
-    // let titleConfig = {title:'Landing', tintColor:'white'};
-    let titleConfig = { title: 'Landing', tintColor: 'white' };
+    render() {
+      const rightButtonConfig = {
+      title: 'Next',
+      handler: () => alert('hello!'),
+    };
+
+    const titleConfig = {
+      title: 'Hello, world',
+    };
+
     return (
-      <View>
-
+      <View style={{ flex: 1, }}>
         <NavigationBar
-           title={titleConfig}
-         />
-
-        <Text>
-          Landing
-        </Text>
-
+          title={titleConfig}
+          rightButton={rightButtonConfig} />
       </View>
     );
   }

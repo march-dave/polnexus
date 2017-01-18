@@ -55,6 +55,7 @@ export default class polnexus extends Component {
       }}>
         <View>
 
+
           <TouchableHighlight
             onPress={this.ImageClick.bind(this)}
             activeOpacity={75 / 100}
