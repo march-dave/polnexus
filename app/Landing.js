@@ -21,9 +21,20 @@ export default class Landing extends React.Component {
 
     return (
       <View style={{ flex: 1, }}>
-        <NavigationBar
-          title={titleConfig}
-          rightButton={rightButtonConfig} />
+          <NavigationBar
+            title={{ title: 'Title', tintColor: 'black', }}
+            leftButton={{ title: 'Back', }}
+            rightButton={{ title: 'Forward', }}
+            style={{ backgroundColor: "white", }}
+            statusBar={{ tintColor: "white", }}
+          />
+
+          <TouchableOpacity
+            onPress={() => {}}
+            activeOpacity={75 / 100}>
+            <Text>Press</Text>
+          </TouchableOpacity>
+
       </View>
     );
   }
