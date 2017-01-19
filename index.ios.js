@@ -6,6 +6,7 @@ import {
   View,
   Image,
   AlertIOS,
+  Navigator,
   TouchableHighlight,
   TouchOpacity
 } from 'react-native';
@@ -47,6 +48,20 @@ export default class polnexus extends Component {
 
   render() {
     return (
+
+
+      <Navigator 
+        initialRoute={ {name: 'Landing'}}
+        renderScene={ (route, navigator) => {
+
+          swithc(route.name) {
+            case 'Landing':
+              return (
+                <Landing navigator={navigator}
+              )
+          }
+
+        } }
 
       <View style={{
         flex: 1,
