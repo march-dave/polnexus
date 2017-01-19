@@ -51,17 +51,16 @@ export default class polnexus extends Component {
 
 
       <Navigator 
-        initialRoute={ {name: 'Landing'}}
-        renderScene={ (route, navigator) => {
-
-          swithc(route.name) {
-            case 'Landing':
-              return (
-                <Landing navigator={navigator}
-              )
-          }
-
-        } }
+        initialRoute={ { name: 'Landing'} }
+    renderScene= { (route, navigator) => {
+      switch(route.name) {
+        case 'Landing':
+          return (
+            <Landing navigator={navigator} />
+          )
+      }
+    } }
+      />
 
       <View style={{
         flex: 1,
