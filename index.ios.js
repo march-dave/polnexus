@@ -49,46 +49,18 @@ export default class polnexus extends Component {
   render() {
     return (
 
-
-      <Navigator 
+      <Navigator
         initialRoute={ { name: 'Landing'} }
-    renderScene= { (route, navigator) => {
-      switch(route.name) {
-        case 'Landing':
-          return (
-            <Landing navigator={navigator} />
-          )
-      }
-    } }
+        renderScene= { (route, navigator) => {
+          switch(route.name) {
+            case 'Landing':
+              return (
+                <Landing navigator={navigator} />
+              )
+          }
+        } }
       />
 
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-      }}>
-        <View>
-
-
-          <TouchableHighlight
-            onPress={this.ImageClick.bind(this)}
-            activeOpacity={75 / 100}
-            underlayColor={"rgb(210,210,210)"}>
-
-            <Image
-                style={styles.goImages}
-                resizeMode={"contain"}
-                source={{uri:'https://res.cloudinary.com/drrwovgv6/image/upload/v1484491467/bluestar_pj5ecu.png'}}
-              />
-          </TouchableHighlight>
-        </View>
-
-        <Landing />
-
-        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-        <Text style={ {height: 50, backgroundColor: 'steelblue'} }>{this.state.like}</Text>
-
-      </View>
     );
   }
 }
